@@ -5,7 +5,10 @@ npm i ./my-dev-modulename --save
 react-native link my-dev-modulename
 ```
 
-Check `src/components/index.js`
+Also check [npm link](https://docs.npmjs.com/cli/link)
+
+
+# Example
 
 ```
 MyModule
