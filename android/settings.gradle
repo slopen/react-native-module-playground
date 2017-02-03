@@ -1,0 +1,3 @@
+rootProject.name = 'ReactNativeModulePlayground'
+
+include ':app'
