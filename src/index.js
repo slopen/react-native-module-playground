@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {NativeModules} from 'react-native';
+import {NativeModules, DeviceEventEmitter} from 'react-native';
 
 import {
 	StyleSheet,
@@ -8,36 +8,52 @@ import {
 	View
 } from 'react-native';
 
-const styles = StyleSheet.create ({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#FFF'
-	},
-    button: {
-        margin: 30,
-        padding: 30,
-        backgroundColor: '#EEE'
-    }
-});
+import ExampleModule from 'react-native-example-module';
 
-const {MyModule} = NativeModules;
-
-console.log ('MyModule', MyModule);
+console.log (NativeModules);
 
 export default class ReactNativeModulePlayground extends Component {
 
+	componentDidMount () {
+
+		DeviceEventEmitter.addListener ('example-module:event', (data) => {
+			console.log ('example module event', data);
+		});
+
+	}
+
 	onRunPress = () => {
 
-		MyModule
-			.MyMethod ()
+		ExampleModule
+			.callbackMethod ({},
+				(result) => {
+					console.log ('callback result:', result);
+				},
+				(err) => {
+					console.log ('callback error:', err);
+				}
+			);
+
+		ExampleModule
+			.promiseMethod ()
 			.then ((result) => {
-				console.log ('result', result);
+				console.log ('promise result:', result);
 			})
 			.catch ((err) => {
-				console.error ('error', err);
+				console.log ('promise error:', err);
 			});
+
+		ExampleModule
+			.activityMethod ()
+			.then ((result) => {
+				console.log ('activity result', result);
+			})
+			.catch ((err) => {
+				console.log ('activity error', err);
+			});
+
+		ExampleModule
+			.eventMethod ()
 	}
 
 	render () {
@@ -59,3 +75,17 @@ export default class ReactNativeModulePlayground extends Component {
 		);
 	}
 }
+
+const styles = StyleSheet.create ({
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#FFF'
+	},
+    button: {
+        margin: 30,
+        padding: 30,
+        backgroundColor: '#EEE'
+    }
+});

@@ -1,0 +1,20 @@
+{
+  "name": "react-native-example-module",
+  "version": "0.1.0",
+  "description": "Example Module for React Native",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slopen/react-native-example-module"
+  },
+  "keywords": [
+    "react-component",
+    "react-native",
+    "android"
+  ],
+  "peerDependencies": {
+    "react-native": "*"
+  },
+  "author": "Danil Kostrov (https://github.com/slopen)",
+  "license": "MIT"
+}
