@@ -22,7 +22,7 @@ RCT_EXPORT_MODULE ();
 - (NSDictionary *)constantsToExport
 {
     return @{
-        @"FILES_DIR_PATH": [[NSBundle mainBundle] bundlePath],
+        @"FILES_DIR_PATH": NSBundle.mainBundle.bundlePath,
         @"CACHE_DIR_PATH": NSTemporaryDirectory ()
     };
 }
@@ -70,9 +70,9 @@ RCT_EXPORT_METHOD (
 
 
 RCT_EXPORT_METHOD (
-    activityMethod:(NSDictionary *)options
-          resolver:(RCTPromiseResolveBlock)resolve
-          rejecter:(RCTPromiseRejectBlock)reject
+    nativeMethod:(NSDictionary *)options
+        resolver:(RCTPromiseResolveBlock)resolve
+        rejecter:(RCTPromiseRejectBlock)reject
 ) {
 
     dispatch_async (dispatch_get_main_queue (), ^{
@@ -96,7 +96,11 @@ RCT_EXPORT_METHOD (
 }
 
 - (UIViewController*) getRootViewController {
-    UIViewController *root = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    UIViewController *root = UIApplication
+        .sharedApplication
+        .delegate
+        .window
+        .rootViewController;
 
     while (root.presentedViewController != nil) {
         root = root.presentedViewController;

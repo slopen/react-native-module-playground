@@ -132,7 +132,7 @@ public class ExampleModuleModule extends ReactContextBaseJavaModule {
     * Activity with Promise example
     **/
 	@ReactMethod
-	public void activityMethod (
+	public void nativeMethod (
 		ReadableMap options,
 		Promise promise
 	) {

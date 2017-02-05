@@ -25,6 +25,9 @@ export default class ReactNativeModulePlayground extends Component {
 	onRunPress = () => {
 
 		ExampleModule
+			.eventMethod ();
+
+		ExampleModule
 			.callbackMethod ({},
 				(result) => {
 					console.log ('callback result:', result);
@@ -44,16 +47,14 @@ export default class ReactNativeModulePlayground extends Component {
 			});
 
 		ExampleModule
-			.activityMethod ()
+			.nativeMethod ()
 			.then ((result) => {
-				console.log ('activity result', result);
+				console.log ('native result', result);
 			})
 			.catch ((err) => {
-				console.log ('activity error', err);
+				console.log ('native error', err);
 			});
 
-		ExampleModule
-			.eventMethod ()
 	}
 
 	render () {
