@@ -27,9 +27,9 @@ class ExampleModuleBridge {
             .call (ExampleModule, options);
     }
 
-    activityMethod (options = {}) {
+    nativeMethod (options = {}) {
         return ExampleModule
-            .activityMethod
+            .nativeMethod
             .call (ExampleModule, options);
     }
 
@@ -41,4 +41,4 @@ class ExampleModuleBridge {
 
 }
 
-module.exports = new ExampleModuleBridge ()
+export default new ExampleModuleBridge ()
