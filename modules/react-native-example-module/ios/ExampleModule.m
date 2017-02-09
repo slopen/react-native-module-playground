@@ -1,16 +1,6 @@
- //
- //  ExampleModule.m
- //  ExampleModule
- //
- //  Created by Danil Kostrov on 05/02/2017.
- //  Copyright © 2017 Danil Kostrov. All rights reserved.
- //
-#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-#import "RCTLog.h"
 #import "RCTEventDispatcher.h"
-#import "RCTRootView.h"
 
 #import "ExampleModule.h"
 
@@ -81,15 +71,14 @@ RCT_EXPORT_METHOD (
 
         controller.delegate = self;
         controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        controller.allowsEditing = YES;
+        controller.allowsEditing = NO;
 
         [[self getRootViewController] presentViewController:controller
                                                    animated:YES
                                                  completion:nil];
 
-        self.imagePickerController = controller;
-        self.activityPromiseResolver = resolve;
-        self.activityPromiseRejecter = reject;
+        self.nativeMethodPromiseResolver = resolve;
+        self.nativeMethodPromiseRejecter = reject;
 
     });
 
@@ -110,20 +99,28 @@ RCT_EXPORT_METHOD (
 }
 
 - (void) imagePickerController:(UIImagePickerController *)picker
- didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
+ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *pickedImage = [info objectForKey: UIImagePickerControllerOriginalImage];
     NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
     NSURL *imageUrl = [info objectForKey: UIImagePickerControllerReferenceURL];
     NSString *path = [imageUrl absoluteString];
 
-    self.activityPromiseResolver (@{
+    self.nativeMethodPromiseResolver (@{
         @"path": path,
         @"type": mediaType,
         @"message": @"hello from activity"
     });
 
-    [[self imagePickerController] dismissViewControllerAnimated:YES completion:nil];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    NSError *error;
+    NSString *code = @"0";
+
+    self.nativeMethodPromiseRejecter (code, @"CANCELLED", error);
+
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
