@@ -9,6 +9,7 @@ if (!ExampleModule) {
 
 class ExampleModuleBridge {
 
+    static CACHE_DIR_PATH = ExampleModule.CACHE_DIR_PATH
     static FILES_DIR_PATH = ExampleModule.FILES_DIR_PATH
 
     callbackMethod (

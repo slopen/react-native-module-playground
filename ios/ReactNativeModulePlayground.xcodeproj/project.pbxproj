@@ -14,6 +14,8 @@
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* ReactNativeModulePlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ReactNativeModulePlaygroundTests.m */; };
 		074C43621E479EB3008E6848 /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 074C43601E479E4F008E6848 /* libRCTCameraRoll.a */; };
+		074C43D51E4B92DF008E6848 /* ExampleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074C43D31E4B92DF008E6848 /* ExampleModule.swift */; };
+		074C43D71E4B96CA008E6848 /* ExampleModuleBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 074C43D61E4B96CA008E6848 /* ExampleModuleBridge.m */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -25,7 +27,6 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		9E26F66D287E4B128937653F /* libExampleModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D95CC5E9364CFC83F738DD /* libExampleModule.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,13 +71,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = ReactNativeModulePlayground;
-		};
-		074C43401E46E913008E6848 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C073E9004E541FEBCD26613 /* ExampleModule.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = ExampleModule;
 		};
 		074C435F1E479E4F008E6848 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -238,6 +232,9 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ReactNativeModulePlaygroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeModulePlaygroundTests.m; sourceTree = "<group>"; };
 		074C435B1E479E4F008E6848 /* RCTCameraRoll.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTCameraRoll.xcodeproj; path = "../node_modules/react-native/Libraries/CameraRoll/RCTCameraRoll.xcodeproj"; sourceTree = "<group>"; };
+		074C43D11E4B92DF008E6848 /* ExampleModule-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ExampleModule-Bridging-Header.h"; path = "../modules/react-native-example-module/ios/ExampleModule-Bridging-Header.h"; sourceTree = "<group>"; };
+		074C43D31E4B92DF008E6848 /* ExampleModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleModule.swift; path = "../modules/react-native-example-module/ios/ExampleModule.swift"; sourceTree = "<group>"; };
+		074C43D61E4B96CA008E6848 /* ExampleModuleBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExampleModuleBridge.m; path = "../modules/react-native-example-module/ios/ExampleModuleBridge.m"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ReactNativeModulePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactNativeModulePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,8 +248,6 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		8C073E9004E541FEBCD26613 /* ExampleModule.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ExampleModule.xcodeproj; path = "../node_modules/react-native-example-module/ios/ExampleModule.xcodeproj"; sourceTree = "<group>"; };
-		A7D95CC5E9364CFC83F738DD /* libExampleModule.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libExampleModule.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,7 +275,6 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				9E26F66D287E4B128937653F /* libExampleModule.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,20 +340,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		074C433D1E46E913008E6848 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				074C43411E46E913008E6848 /* libExampleModule.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		074C435C1E479E4F008E6848 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				074C43601E479E4F008E6848 /* libRCTCameraRoll.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		074C43D01E4B92CA008E6848 /* ExampleModule */ = {
+			isa = PBXGroup;
+			children = (
+				074C43D61E4B96CA008E6848 /* ExampleModuleBridge.m */,
+				074C43D11E4B92DF008E6848 /* ExampleModule-Bridging-Header.h */,
+				074C43D31E4B92DF008E6848 /* ExampleModule.swift */,
+			);
+			name = ExampleModule;
 			sourceTree = "<group>";
 		};
 		139105B71AF99BAD00B5F7CC /* Products */ = {
@@ -383,6 +379,7 @@
 		13B07FAE1A68108700A75B9A /* ReactNativeModulePlayground */ = {
 			isa = PBXGroup;
 			children = (
+				074C43D01E4B92CA008E6848 /* ExampleModule */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -442,7 +439,6 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				8C073E9004E541FEBCD26613 /* ExampleModule.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -529,6 +525,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 0820;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ReactNativeModulePlayground" */;
@@ -543,10 +542,6 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = 074C433D1E46E913008E6848 /* Products */;
-					ProjectRef = 8C073E9004E541FEBCD26613 /* ExampleModule.xcodeproj */;
-				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -638,13 +633,6 @@
 			fileType = archive.ar;
 			path = libRCTVibration.a;
 			remoteRef = 00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		074C43411E46E913008E6848 /* libExampleModule.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libExampleModule.a;
-			remoteRef = 074C43401E46E913008E6848 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		074C43601E479E4F008E6848 /* libRCTCameraRoll.a */ = {
@@ -845,8 +833,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074C43D51E4B92DF008E6848 /* ExampleModule.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				074C43D71E4B96CA008E6848 /* ExampleModuleBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +866,7 @@
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -902,6 +893,7 @@
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ReactNativeModulePlaygroundTests/Info.plist;
@@ -926,6 +918,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native/React/**";
@@ -937,6 +930,9 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = ReactNativeModulePlayground;
+				SWIFT_OBJC_BRIDGING_HEADER = "../modules/react-native-example-module/ios/ExampleModule-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -945,6 +941,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native/React/**";
 				INFOPLIST_FILE = ReactNativeModulePlayground/Info.plist;
@@ -955,6 +952,8 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = ReactNativeModulePlayground;
+				SWIFT_OBJC_BRIDGING_HEADER = "../modules/react-native-example-module/ios/ExampleModule-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

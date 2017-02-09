@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074C437F1E47EED4008E6848 /* ExampleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074C437E1E47EED4008E6848 /* ExampleModule.swift */; };
 		13BE3DEE1AC21097009241FE /* ExampleModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE3DED1AC21097009241FE /* ExampleModule.m */; };
 /* End PBXBuildFile section */
 
@@ -23,8 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		074C437D1E47EED3008E6848 /* ExampleModule-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExampleModule-Bridging-Header.h"; sourceTree = "<group>"; };
+		074C437E1E47EED4008E6848 /* ExampleModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleModule.swift; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libExampleModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExampleModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		13BE3DEC1AC21097009241FE /* ExampleModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleModule.h; sourceTree = "<group>"; };
 		13BE3DED1AC21097009241FE /* ExampleModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleModule.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,10 +59,11 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				13BE3DEC1AC21097009241FE /* ExampleModule.h */,
+				074C437E1E47EED4008E6848 /* ExampleModule.swift */,
 				13BE3DED1AC21097009241FE /* ExampleModule.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				074C432F1E46E610008E6848 /* Frameworks */,
+				074C437D1E47EED3008E6848 /* ExampleModule-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -120,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074C437F1E47EED4008E6848 /* ExampleModule.swift in Sources */,
 				13BE3DEE1AC21097009241FE /* ExampleModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,31 +209,40 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../React/**",
 					"$(SRCROOT)/../../../node_modules/react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ExampleModule;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "../../../modules/react-native-example-module/ios/ExampleModule-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ExampleModule;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "../../../modules/react-native-example-module/ios/ExampleModule-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
