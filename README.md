@@ -23,6 +23,7 @@ react-native link react-native-example-module
 ```
 
 [npm link](https://docs.npmjs.com/cli/link)
+
 [swift bridging](https://gist.github.com/robertjpayne/855fdb15d5ceca12f6c5)
 
 
