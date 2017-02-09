@@ -35,3 +35,4 @@ git checkout example-module-android-iosswift
 ```
 
 boilerplate files are in `modules/react-native-example-module`
+uses [react-native-example-module](https://github.com/slopen/react-native-example-module) but with XCode setup
