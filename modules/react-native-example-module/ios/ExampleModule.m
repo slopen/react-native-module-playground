@@ -108,7 +108,7 @@ RCT_EXPORT_METHOD (
     self.nativeMethodPromiseResolver (@{
         @"path": path,
         @"type": mediaType,
-        @"message": @"hello from activity"
+        @"message": @"hello from native method"
     });
 
     [picker dismissViewControllerAnimated:YES completion:nil];
