@@ -88,13 +88,9 @@ class ExampleModule: NSObject, UIImagePickerControllerDelegate, UINavigationCont
     }
 
     internal func getRootViewController () -> UIViewController {
-        var root: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
+        let root: UIViewController? = UIApplication.shared.keyWindow?.rootViewController
 
-        if root?.presentedViewController != nil {
-            root = root!.presentedViewController
-        }
-
-        return root!
+        return root?.presentedViewController ?? root!
     }
 
     internal func imagePickerController (
